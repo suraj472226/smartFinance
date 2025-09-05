@@ -51,7 +51,7 @@ Powered by **FastAPI**.
 cd frontend
 npm install
 npm run dev
-
+```
 #### 🔹Backend 🔹 
 ```bash
 cd backend

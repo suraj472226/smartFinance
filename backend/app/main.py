@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
 from .database import connect_to_mongo, close_mongo_connection
-from .routers import auth_router, expenses_router, insights_router
+from .routers import auth_router, expenses_router, insights_router, upload_router # <-- ADDED upload_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -33,6 +33,7 @@ app.add_middleware(
 app.include_router(auth_router.router, tags=["Authentication"], prefix="/api/auth")
 app.include_router(expenses_router.router, tags=["Expenses"], prefix="/api/expenses")
 app.include_router(insights_router.router, tags=["Insights"], prefix="/api/insights")
+app.include_router(upload_router.router, tags=["Upload"], prefix="/api/upload") # <-- ADDED THIS LINE
 
 # --- Root Endpoint ---
 @app.get("/", tags=["Root"])

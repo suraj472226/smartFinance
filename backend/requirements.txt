@@ -6,3 +6,10 @@ pydantic-settings
 python-dotenv
 passlib[bcrypt]
 python-jose[cryptography]
+pytesseract
+python-multipart
+Pillow
+opencv-python-headless
+httpx
+paddlepaddle
+paddleocr
